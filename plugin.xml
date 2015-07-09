@@ -31,8 +31,6 @@
             </feature>
         </config-file>
         <source-file src="src/android/FacebookAdPlugin.java" target-dir="src/com/rjfun/cordova/facebookads" />
-		
-	    <dependency id="android.support.v4"/>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<activity android:name="com.facebook.ads.InterstitialAdActivity" 
