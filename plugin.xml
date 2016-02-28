@@ -43,7 +43,7 @@
           
         <source-file src="src/android/AudienceNetwork.jar" target-dir="libs" />
 
-        <framework src="com.android.support:support-v4:+" />
+         <!-- <framework src="com.android.support:support-v4:+" /> -->
      </platform>
      
      <!-- ios -->
