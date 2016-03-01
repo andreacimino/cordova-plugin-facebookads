@@ -285,7 +285,7 @@ public class FacebookAdPlugin extends GenericAdPlugin {
 					jsonData = json.toString();
 				} catch(Exception e) {
 				}
-            	unit.ad.registerViewForInteraction(unit.tracking);
+            	unit.ad.registerViewForInteraction(unit.view);
 				fireEvent(__getProductShortName(), EVENT_AD_LOADED, jsonData);
         		break;
         	}
