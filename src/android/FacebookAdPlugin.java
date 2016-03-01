@@ -187,12 +187,12 @@ public class FacebookAdPlugin extends GenericAdPlugin {
 								boolean clicked = (Math.abs(evt.getX() - mTapX) + Math.abs(evt.getY() - mTapY) < 10);
 								mTapX = 0;
 								mTapY = 0;
-								if(clicked) {
-									evt.setAction(MotionEvent.ACTION_DOWN);
-									trackingV.dispatchTouchEvent(evt);
-									evt.setAction(MotionEvent.ACTION_UP);
-									return trackingV.dispatchTouchEvent(evt);
-								}
+								// if(clicked) {
+								// 	evt.setAction(MotionEvent.ACTION_DOWN);
+								// 	trackingV.dispatchTouchEvent(evt);
+								// 	evt.setAction(MotionEvent.ACTION_UP);
+								// 	return trackingV.dispatchTouchEvent(evt);
+								// }
 								break;
 						}
 
@@ -285,7 +285,7 @@ public class FacebookAdPlugin extends GenericAdPlugin {
 					jsonData = json.toString();
 				} catch(Exception e) {
 				}
-            	unit.ad.registerViewForInteraction(unit.view);
+            	unit.ad.registerViewForInteraction(unit.tracking);
 				fireEvent(__getProductShortName(), EVENT_AD_LOADED, jsonData);
         		break;
         	}
