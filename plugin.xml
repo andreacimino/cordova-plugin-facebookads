@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="cordova-plugin-facebookads"
-	version="4.2.3">
+	version="4.7.4">
       
     <name>FacebookAds</name>
 	<description>Cordova/PhoneGap Plugin for Facebook AudienceNetwork Ads</description>
@@ -22,6 +22,7 @@
     </js-module>
 
 	<dependency id="cordova-plugin-extension"/>
+	<dependency id="cordova-facebook-audnet-sdk"/>
 
     <!-- android -->
     <platform name="android">
@@ -41,9 +42,7 @@
 			  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
           
-        <source-file src="src/android/AudienceNetwork.jar" target-dir="libs" />
-
-         <!-- <framework src="com.android.support:support-v4:+" /> -->
+        <!-- <framework src="com.android.support:support-v4:+" /> -->
      </platform>
      
      <!-- ios -->
@@ -55,8 +54,8 @@
          </config-file>
          <header-file src="src/ios/FacebookAdPlugin.h" />
          <source-file src="src/ios/FacebookAdPlugin.m" />
-         
-        <framework src="src/ios/FBAudienceNetwork.framework" custom="true"/>
+         <header-file src="src/ios/UITapGestureRecognizer+Spec.h" />
+         <source-file src="src/ios/UITapGestureRecognizer+Spec.m" />
          
         <framework src="AdSupport.framework"/>
         <framework src="StoreKit.framework"/>
