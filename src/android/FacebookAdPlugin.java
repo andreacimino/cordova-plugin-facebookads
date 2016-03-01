@@ -163,7 +163,7 @@ public class FacebookAdPlugin extends GenericAdPlugin {
             	unit.view = new View(getActivity());
 				unit.tracking = new View(getActivity());
             	layout.addView(unit.view, new RelativeLayout.LayoutParams(unit.w, unit.h));
-				layout.addView(unit.tracking, new RelativeLayout.LayoutParams(unit.w, unit.h));
+				layout.addView(unit.tracking, new RelativeLayout.LayoutParams(0, 0));
             	if(isTesting) {
                 	unit.view.setBackgroundColor(0x3000FF00);
             	}
@@ -187,12 +187,12 @@ public class FacebookAdPlugin extends GenericAdPlugin {
 								boolean clicked = (Math.abs(evt.getX() - mTapX) + Math.abs(evt.getY() - mTapY) < 10);
 								mTapX = 0;
 								mTapY = 0;
-								// if(clicked) {
-								// 	evt.setAction(MotionEvent.ACTION_DOWN);
-								// 	trackingV.dispatchTouchEvent(evt);
-								// 	evt.setAction(MotionEvent.ACTION_UP);
-								// 	return trackingV.dispatchTouchEvent(evt);
-								// }
+								if(clicked) {
+									evt.setAction(MotionEvent.ACTION_DOWN);
+									trackingV.dispatchTouchEvent(evt);
+									evt.setAction(MotionEvent.ACTION_UP);
+									return trackingV.dispatchTouchEvent(evt);
+								}
 								break;
 						}
 
